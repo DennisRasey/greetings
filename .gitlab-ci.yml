@@ -1,0 +1,34 @@
+variables:
+  JAVA_HOME: "/usr/lib/jvm/java-11-openjdk-amd64"
+
+stages:
+  - clean
+  - build
+  - publish
+  - deploy
+  - promote
+
+mvn clean:
+  stage: clean
+  script:
+    - mvn clean
+
+mvn package:
+  stage: build
+  script:
+    - mvn package
+
+mvn deploy:
+  stage: publish
+  script:
+    - mvn deploy
+
+deploy to dev:
+  stage: deploy
+  script:
+    - echo "I'm going to deploy a SNAPSHOT to dev"
+  environment:
+    name: dev
+    url: https://staging.example.com
+
+

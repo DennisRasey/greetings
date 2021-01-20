@@ -1,0 +1,51 @@
+
+server.port = 8080
+
+server.tomcat.basedir=.
+
+management.endpoints.web.exposure.include=*
+management.endpoint.health.show-details=always
+
+#logging.level.org.springframework.web=DEBUG
+#logging.level.org.hibernate=ERROR
+
+logging.path=.
+logging.file=./myapplication.log
+
+server.tomcat.accesslog.directory=.
+server.tomcat.accesslog.buffered=false
+server.tomcat.accesslog.enabled=true
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+server.tomcat.accesslog.pattern=common 
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.rename-on-rotate=true
+server.tomcat.accesslog.request-attributes-enabled=true
+server.tomcat.accesslog.rotate=true
+server.tomcat.accesslog.suffix=.log
+
+
+spring.pid.file=application.pid
+spring.pid.fail-on-write-error=true
+
+
+##
+#management.endpoint.jolokia.enabled=true 
+
+
+# ENDPOINTS JMX
+#management.endpoints.jmx.exposure.include=*
+#management.endpoints.jmx.unique-names=true
+
+# METRICS
+#management.metrics.export.jmx.enabled=true
+
+
+# JMX
+#spring.jmx.default-domain= # JMX domain name.
+#spring.jmx.enabled=true # Expose management beans to the JMX domain.
+#spring.jmx.server=mbeanServer # MBeanServer bean name.
+
+spring.application.name=greetings
+
+
+
